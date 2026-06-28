@@ -26,7 +26,7 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-html { overflow-x: hidden; max-width: 100%; }
+html { overflow-x: hidden; max-width: 100vw; }
 body {
   background: var(--paper);
   color: var(--char);
@@ -35,7 +35,8 @@ body {
   line-height: 1.62;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
-  max-width: 100%;
+  max-width: 100vw;
+  position: relative;
 }
 ::selection { background: var(--amber); color: var(--green-ink); }
 img { display: block; max-width: 100%; }
@@ -389,16 +390,27 @@ h2.sec-title em { font-style: normal; color: var(--green); position: relative; }
   .flightpath { display: none; }
   .path-vehicle { display: none; }
 }
+@media (max-width: 640px) {
+  /* hide boarding pass stub on small screens — form only */
+  .bd-stub { display: none; }
+  .boarding { border-radius: 20px; }
+  .boarding::before, .boarding::after { display: none; }
+  .bd-form { padding: 32px 24px; }
+  .bd-form .ff.two { grid-template-columns: 1fr; }
+}
 @media (max-width: 560px) {
   body { font-size: 16px; }
-  .hero-content { padding: 92px 22px 30px; }
-  .hero-strip { backdrop-filter: none; background: var(--green-ink); overflow: hidden; }
-  .hero-strip-in { gap: 14px; flex-wrap: wrap; }
+  .hero-content { padding: 92px 20px 30px; }
+  /* hero strip — prevent horizontal overflow */
+  .hero-strip { backdrop-filter: none; background: var(--green-ink); overflow: hidden; max-width: 100vw; }
+  .hero-strip-in { gap: 12px 20px; flex-wrap: wrap; padding: 12px 0; }
   .hero-strip .sep { display: none; }
+  .hero-strip .stat b { font-size: 15px; }
   .hero-scroll { display: none; }
   .footer-grid { grid-template-columns: 1fr; }
-  .bd-form { padding: 28px 22px; }
-  .bd-form .ff.two { grid-template-columns: 1fr; }
-  .wrap { width: calc(100% - 36px); }
+  .bd-form { padding: 28px 20px; }
+  .wrap { width: calc(100% - 32px); }
+  /* nav safe-guard */
+  .nav { max-width: 100vw; overflow: hidden; }
 }
 @keyframes spin { to { transform: rotate(360deg); } }

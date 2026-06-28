@@ -47,11 +47,15 @@
 .nav:not(.stuck) .nav-link { color: rgba(255,255,255,0.92); }
 .nav:not(.stuck) .nav-link:hover { background: rgba(255,255,255,0.16); color: #fff; }
 
-.nav-cats-wrap { border-top: 1px solid rgba(255,255,255,0.18); transition: border-color 0.3s; }
+.nav-cats-wrap {
+  border-top: 1px solid rgba(255,255,255,0.18); transition: border-color 0.3s;
+  overflow: hidden; max-width: 100vw;
+}
 .nav.stuck .nav-cats-wrap { border-top-color: var(--line-soft); }
 .nav-cats {
   display: flex; align-items: center; justify-content: center; gap: clamp(12px, 3vw, 44px);
   padding: 11px 0; overflow-x: auto; scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 .nav-cats::-webkit-scrollbar { display: none; }
 .nav-cat {
