@@ -50,7 +50,7 @@ export default function Educare() {
       {/* ===== HERO — mysterious, cinematic ===== */}
       <header className="edu-hero">
         <div className="eh-bg">
-          <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=80" alt="" fetchpriority="high" decoding="async" />
         </div>
         <div className="eh-scrim" />
         <div className="wrap eh-content">
@@ -101,7 +101,7 @@ export default function Educare() {
         <div className="wrap">
           <div className="ef-grid reveal">
             <div className="ef-photo">
-              <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=900&q=80" alt="Learning in the wild" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1488190211105-8b0e65b80b4e?auto=format&fit=crop&w=900&q=80" alt="Learning in the wild" loading="lazy" decoding="async" />
               <div className="ef-overlay">
                 <blockquote>"I expected a school trip. I got a turning point."</blockquote>
                 <cite>— A student, age 16</cite>
@@ -179,7 +179,7 @@ export default function Educare() {
       {/* ===== ENQUIRY FORM ===== */}
       <section className="section dispatch" id="enquire">
         <div className="book-bg" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1501854140801-50d01698950b?auto=format&fit=crop&w=1920&q=80" alt="" loading="lazy" decoding="async" />
         </div>
         <div className="wrap" style={{ position: 'relative', zIndex: 2 }}>
           <div className="sec-head center reveal">

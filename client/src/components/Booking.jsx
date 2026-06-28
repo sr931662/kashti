@@ -32,7 +32,7 @@ export default function Booking() {
   return (
     <section className="section dispatch" id="book" data-screen-label="Booking">
       <div className="book-bg" aria-hidden="true">
-        <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1920&q=80" alt="" />
+        <img src="https://images.unsplash.com/photo-1473116763249-2faaef81ccda?auto=format&fit=crop&w=1920&q=80" alt="" loading="lazy" decoding="async" />
       </div>
       <div className="wrap">
         <div className="sec-head center reveal">

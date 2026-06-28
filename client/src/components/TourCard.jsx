@@ -5,7 +5,7 @@ export default function TourCard({ tour }) {
   return (
     <article className="tcard">
       <div className="tcard-photo">
-        <img src={tour.img} alt={tour.name} loading="lazy" />
+        <img src={tour.img} alt={tour.name} loading="lazy" decoding="async" />
         <span className="tcard-tag">{tour.tag}</span>
         <span className="tcard-fav"><Icon id="i-heart" /></span>
         <span className="tcard-place">

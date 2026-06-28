@@ -101,6 +101,7 @@
 .page-hero {
   position: relative; min-height: 60vh; display: flex; align-items: flex-end;
   background-size: cover; background-position: center;
+  background-color: var(--green-ink);
   overflow: hidden;
 }
 .page-hero::before {

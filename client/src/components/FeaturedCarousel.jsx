@@ -41,7 +41,7 @@ export default function FeaturedCarousel() {
           <div className="carousel-track" style={{ transform: `translateX(-${idx * 100}%)` }}>
             {SLIDES.map((s, i) => (
               <div className="slide" key={i}>
-                <img src={s.img} alt={s.title} />
+                <img src={s.img} alt={s.title} decoding="async" loading={i === 0 ? 'eager' : 'lazy'} />
                 <div className="slide-content">
                   <span className="kicker">{s.kicker}</span>
                   <h3>{s.title}</h3>

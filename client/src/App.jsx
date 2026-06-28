@@ -1,3 +1,4 @@
+import { lazy, Suspense } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
 import { useScrollReveal } from './hooks/useScrollReveal';
@@ -5,15 +6,15 @@ import Icons from './components/Icons';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 
-import Home from './pages/Home';
-import Experiences from './pages/Experiences';
-import Educare from './pages/Educare';
-import Community from './pages/Community';
-import More from './pages/More';
-
 import './styles/atlas.css';
 import './styles/atlas-home.css';
 import './styles/pages.css';
+
+const Home        = lazy(() => import('./pages/Home'));
+const Experiences = lazy(() => import('./pages/Experiences'));
+const Educare     = lazy(() => import('./pages/Educare'));
+const Community   = lazy(() => import('./pages/Community'));
+const More        = lazy(() => import('./pages/More'));
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -22,8 +23,17 @@ function ScrollToTop() {
 }
 
 function PageWrapper({ children }) {
-  useScrollReveal();
+  const { pathname } = useLocation();
+  useScrollReveal(pathname);
   return <>{children}</>;
+}
+
+function PageFallback() {
+  return (
+    <div style={{ minHeight: '60vh', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <span style={{ width: 36, height: 36, borderRadius: '50%', border: '3px solid #e6f0ea', borderTopColor: '#1b9b6f', display: 'inline-block', animation: 'spin 0.7s linear infinite' }} />
+    </div>
+  );
 }
 
 export default function App() {
@@ -33,14 +43,16 @@ export default function App() {
       <ScrollToTop />
       <Nav />
       <PageWrapper>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/experiences" element={<Experiences />} />
-          <Route path="/experiences/:category" element={<Experiences />} />
-          <Route path="/educare" element={<Educare />} />
-          <Route path="/community" element={<Community />} />
-          <Route path="/more" element={<More />} />
-        </Routes>
+        <Suspense fallback={<PageFallback />}>
+          <Routes>
+            <Route path="/"                       element={<Home />} />
+            <Route path="/experiences"            element={<Experiences />} />
+            <Route path="/experiences/:category"  element={<Experiences />} />
+            <Route path="/educare"                element={<Educare />} />
+            <Route path="/community"              element={<Community />} />
+            <Route path="/more"                   element={<More />} />
+          </Routes>
+        </Suspense>
       </PageWrapper>
       <Footer />
     </BrowserRouter>

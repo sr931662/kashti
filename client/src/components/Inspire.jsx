@@ -65,7 +65,7 @@ export default function Inspire() {
               </div>
               <div className="custom-band">
                 <div className="custom-band-bg" aria-hidden="true">
-                  <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1920&q=80" alt="" />
+                  <img src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1920&q=80" alt="" loading="lazy" decoding="async" />
                 </div>
                 <div className="custom-band-scrim" aria-hidden="true" />
                 <div className="custom-band-content">

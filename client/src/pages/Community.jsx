@@ -98,7 +98,7 @@ export default function Community() {
           <div className="wrap">
             <div className={`comm-grid reveal${i % 2 === 1 ? ' comm-grid-rev' : ''}`}>
               <div className="comm-photo">
-                <img src={c.hero} alt={c.label} loading="lazy" />
+                <img src={c.hero} alt={c.label} loading="lazy" decoding="async" />
                 <div className="comm-badge" style={{ background: c.color }}>
                   <Icon id={c.icon} />
                 </div>
@@ -155,7 +155,7 @@ export default function Community() {
       {/* CTA band */}
       <section className="section dispatch" style={{ paddingTop: 80, paddingBottom: 80 }}>
         <div className="book-bg" aria-hidden="true">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=80" alt="" />
+          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1920&q=80" alt="" loading="lazy" decoding="async" />
         </div>
         <div className="wrap" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
           <div className="reveal">

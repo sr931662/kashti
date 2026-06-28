@@ -71,7 +71,7 @@ export default function More() {
         <div className="wrap">
           <div className="gb-card reveal">
             <div className="gb-photo">
-              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Group travel" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=80" alt="Group travel" loading="lazy" decoding="async" />
               <div className="gb-stat"><b>15+</b><span>group size for best rates</span></div>
             </div>
             <div className="gb-text">
@@ -122,7 +122,7 @@ export default function More() {
         <div className="wrap">
           <div className="gb-card reveal">
             <div className="gb-photo">
-              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80" alt="About Kashti" loading="lazy" />
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=900&q=80" alt="About Kashti" loading="lazy" decoding="async" />
               <div className="gb-stat"><b>2017</b><span>founded in Delhi</span></div>
             </div>
             <div className="gb-text" style={{ background: 'var(--green-ink)' }}>
