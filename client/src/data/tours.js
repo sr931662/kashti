@@ -16,30 +16,30 @@ const IMG = {
 export const TOURS = {
   domestic: {
     group: [
-      { img: IMG.ladakh,    tag: 'Group Tour',  place: 'Ladakh',    name: 'Ladakh High-Pass Odyssey',         days: 7, rating: 4.9, price: 38900 },
-      { img: IMG.andaman,   tag: 'Group Tour',  place: 'Andamans',  name: 'Andaman Island Hopper',            days: 6, rating: 4.8, price: 52400 },
-      { img: IMG.jaisalmer, tag: 'Group Tour',  place: 'Rajasthan', name: 'Thar Desert Caravan',              days: 5, rating: 4.7, price: 27900 },
-      { img: IMG.boat,      tag: 'Group Tour',  place: 'Kerala',    name: 'Backwaters by Kashti',             days: 4, rating: 4.9, price: 24500 },
+      { img: IMG.ladakh,    tag: 'Normal Trip', place: 'Ladakh',    name: 'Ladakh High-Pass Odyssey',         days: 7, rating: 4.9, price: 38900 },
+      { img: IMG.andaman,   tag: 'Normal Trip', place: 'Andamans',  name: 'Andaman Island Hopper',            days: 6, rating: 4.8, price: 52400 },
+      { img: IMG.jaisalmer, tag: 'Normal Trip', place: 'Rajasthan', name: 'Thar Desert Caravan',              days: 5, rating: 4.7, price: 27900 },
+      { img: IMG.boat,      tag: 'Normal Trip', place: 'Kerala',    name: 'Backwaters by Kashti',             days: 4, rating: 4.9, price: 24500 },
     ],
     custom: [
-      { img: IMG.valley,    tag: 'Customized',  place: 'Himachal',  name: 'Spiti Circuit, Your Way',          days: 8, rating: 4.9, price: 41500 },
-      { img: IMG.resort,    tag: 'Customized',  place: 'Goa',       name: 'Slow Goa Beach Retreat',           days: 5, rating: 4.8, price: 31200 },
-      { img: IMG.ladakh,    tag: 'Customized',  place: 'Sikkim',    name: 'Eastern Himalaya Private',         days: 7, rating: 4.8, price: 44800 },
-      { img: IMG.boat,      tag: 'Customized',  place: 'Kerala',    name: 'Munnar & Backwaters Bespoke',      days: 6, rating: 4.9, price: 36900 },
+      { img: IMG.valley,    tag: 'Group Trip',  place: 'Himachal',  name: 'Spiti Circuit, Your Way',          days: 8, rating: 4.9, price: 41500 },
+      { img: IMG.resort,    tag: 'Group Trip',  place: 'Goa',       name: 'Slow Goa Beach Retreat',           days: 5, rating: 4.8, price: 31200 },
+      { img: IMG.ladakh,    tag: 'Group Trip',  place: 'Sikkim',    name: 'Eastern Himalaya Private',         days: 7, rating: 4.8, price: 44800 },
+      { img: IMG.boat,      tag: 'Group Trip',  place: 'Kerala',    name: 'Munnar & Backwaters Bespoke',      days: 6, rating: 4.9, price: 36900 },
     ],
   },
   international: {
     group: [
-      { img: IMG.santorini, tag: 'Group Tour',  place: 'Greece',      name: 'Aegean Drift — Santorini',       days: 6, rating: 4.9, price: 118000 },
-      { img: IMG.bali,      tag: 'Group Tour',  place: 'Indonesia',   name: 'Bali & Gili Sail Escape',        days: 7, rating: 4.8, price: 78500  },
-      { img: IMG.kyoto,     tag: 'Group Tour',  place: 'Japan',       name: 'Japan Blossom Passage',          days: 9, rating: 4.9, price: 165000 },
-      { img: IMG.alps,      tag: 'Group Tour',  place: 'Switzerland', name: 'Alpine Rail & Trail',            days: 8, rating: 4.8, price: 142000 },
+      { img: IMG.santorini, tag: 'Normal Trip', place: 'Greece',      name: 'Aegean Drift — Santorini',       days: 6, rating: 4.9, price: 118000 },
+      { img: IMG.bali,      tag: 'Normal Trip', place: 'Indonesia',   name: 'Bali & Gili Sail Escape',        days: 7, rating: 4.8, price: 78500  },
+      { img: IMG.kyoto,     tag: 'Normal Trip', place: 'Japan',       name: 'Japan Blossom Passage',          days: 9, rating: 4.9, price: 165000 },
+      { img: IMG.alps,      tag: 'Normal Trip', place: 'Switzerland', name: 'Alpine Rail & Trail',            days: 8, rating: 4.8, price: 142000 },
     ],
     custom: [
-      { img: IMG.santorini, tag: 'Customized',  place: 'Greece',    name: 'Cyclades, Island by Island',       days: 9, rating: 4.9, price: 158000 },
-      { img: IMG.bali,      tag: 'Customized',  place: 'Vietnam',   name: 'Halong Bay Private Cruise',        days: 7, rating: 4.8, price: 96500  },
-      { img: IMG.kyoto,     tag: 'Customized',  place: 'Japan',     name: 'Tokyo to Kyoto, Tailored',         days: 10, rating: 4.9, price: 184000 },
-      { img: IMG.alps,      tag: 'Customized',  place: 'Italy',     name: 'Dolomites Slow Escape',            days: 8, rating: 4.8, price: 149000 },
+      { img: IMG.santorini, tag: 'Group Trip',  place: 'Greece',    name: 'Cyclades, Island by Island',       days: 9, rating: 4.9, price: 158000 },
+      { img: IMG.bali,      tag: 'Group Trip',  place: 'Vietnam',   name: 'Halong Bay Private Cruise',        days: 7, rating: 4.8, price: 96500  },
+      { img: IMG.kyoto,     tag: 'Group Trip',  place: 'Japan',     name: 'Tokyo to Kyoto, Tailored',         days: 10, rating: 4.9, price: 184000 },
+      { img: IMG.alps,      tag: 'Group Trip',  place: 'Italy',     name: 'Dolomites Slow Escape',            days: 8, rating: 4.8, price: 149000 },
     ],
   },
 };

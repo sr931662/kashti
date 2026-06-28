@@ -101,9 +101,9 @@ h2.sec-title em { font-style: normal; color: var(--green); position: relative; }
   backdrop-filter: blur(12px);
   box-shadow: 0 1px 0 var(--line-soft);
 }
-.nav-logo { height: 44px; width: auto; cursor: pointer; transition: height 0.3s; }
-.nav.stuck .nav-logo { height: 38px; }
-.nav-links { display: flex; gap: 4px; margin-left: auto; }
+.nav-logo { height: 72px; width: auto; cursor: pointer; transition: height 0.3s; }
+.nav.stuck .nav-logo { height: 56px; }
+.nav-links { display: flex; gap: 4px; margin-left: auto; align-self: center; }
 .nav-link {
   padding: 10px 16px; border-radius: 999px; font-weight: 600; font-size: 15px;
   color: var(--char); transition: background 0.18s, color 0.18s;
@@ -134,9 +134,9 @@ h2.sec-title em { font-style: normal; color: var(--green); position: relative; }
   opacity: 0.9;
 }
 .path-vehicle {
-  position: absolute; left: 0; top: 0; color: var(--amber);
-  filter: drop-shadow(0 6px 8px rgba(201,133,28,0.4));
-  transition: none; z-index: 1;
+  position: fixed; left: 0; top: 0; color: var(--amber);
+  filter: drop-shadow(0 6px 12px rgba(201,133,28,0.55));
+  transition: none; z-index: 9999; pointer-events: none;
 }
 
 /* =========================================================
@@ -348,6 +348,7 @@ h2.sec-title em { font-style: normal; color: var(--green); position: relative; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   .marquee-track, .hero-media .hero-img, .path-vehicle, .hero-scroll .mouse::after { animation: none !important; }
+  .path-vehicle { display: none; }
   html { scroll-behavior: auto; }
 }
 
@@ -383,6 +384,7 @@ h2.sec-title em { font-style: normal; color: var(--green); position: relative; }
   .bd-stub { border-right: none; border-bottom: 3px dashed rgba(255,255,255,0.4); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .flightpath { display: none; }
+  .path-vehicle { display: none; }
 }
 @media (max-width: 560px) {
   body { font-size: 16px; }

@@ -51,7 +51,7 @@ export default function Booking() {
               <div className="sub">Request your clearance</div>
             </div>
             <div className="bd-meta">
-              <div className="row"><div className="k">Home port</div><div className="v">Lucknow, UP · India</div></div>
+              <div className="row"><div className="k">Home port</div><div className="v">New Delhi, India</div></div>
               <div className="row"><div className="k">Comm channel</div><div className="v">boarding@kashtiadventures.com</div></div>
               <div className="row"><div className="k">Desk hours</div><div className="v">24 / 7 — every time zone</div></div>
             </div>

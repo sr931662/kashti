@@ -1,20 +1,32 @@
+import { useEffect, useRef } from 'react';
 import { Icon } from './Icons';
+import heroBg from '../assets/hero_background.mp4';
 
 export default function Hero() {
+  const videoRef = useRef(null);
+
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.playbackRate = 0.5;
+  }, []);
+
   return (
     <header className="hero" id="top" data-screen-label="Hero">
       <div className="hero-media" aria-hidden="true">
-        <img
+        <video
+          ref={videoRef}
           className="hero-img"
-          src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1920&q=80"
-          alt=""
+          src={heroBg}
+          autoPlay
+          loop
+          muted
+          playsInline
         />
       </div>
       <div className="hero-scrim" aria-hidden="true" />
       <div className="hero-grain" aria-hidden="true" />
 
       <div className="hero-content">
-        <span className="kicker">Travel studio · Est. Lucknow, India</span>
+        <span className="kicker">Travel studio · Est. Delhi, India</span>
         <span className="scribble">hello, fellow wanderer —</span>
         <h1>
           Every great story begins with a{' '}

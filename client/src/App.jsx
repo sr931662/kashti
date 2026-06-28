@@ -1,41 +1,48 @@
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 import { useScrollReveal } from './hooks/useScrollReveal';
 import Icons from './components/Icons';
-import FlightPath from './components/FlightPath';
 import Nav from './components/Nav';
-import Hero from './components/Hero';
-import Marquee from './components/Marquee';
-import Inspire from './components/Inspire';
-import FeaturedCarousel from './components/FeaturedCarousel';
-import Explore from './components/Explore';
-import WhyKashti from './components/WhyKashti';
-import Reviews from './components/Reviews';
-import Gallery from './components/Gallery';
-import Booking from './components/Booking';
-import GivingBack from './components/GivingBack';
 import Footer from './components/Footer';
+
+import Home from './pages/Home';
+import Experiences from './pages/Experiences';
+import Educare from './pages/Educare';
+import Community from './pages/Community';
+import More from './pages/More';
 
 import './styles/atlas.css';
 import './styles/atlas-home.css';
+import './styles/pages.css';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  return null;
+}
+
+function PageWrapper({ children }) {
+  useScrollReveal();
+  return <>{children}</>;
+}
 
 export default function App() {
-  useScrollReveal();
-
   return (
-    <>
+    <BrowserRouter>
       <Icons />
-      <FlightPath />
+      <ScrollToTop />
       <Nav />
-      <Hero />
-      <Marquee />
-      <Inspire />
-      <FeaturedCarousel />
-      <Explore />
-      <WhyKashti />
-      <Reviews />
-      <Gallery />
-      <Booking />
-      <GivingBack />
+      <PageWrapper>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/experiences" element={<Experiences />} />
+          <Route path="/experiences/:category" element={<Experiences />} />
+          <Route path="/educare" element={<Educare />} />
+          <Route path="/community" element={<Community />} />
+          <Route path="/more" element={<More />} />
+        </Routes>
+      </PageWrapper>
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }

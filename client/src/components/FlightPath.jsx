@@ -58,7 +58,8 @@ export default function FlightPath() {
       const pt  = dash.getPointAtLength(Math.min(len - 1, drawn + 2));
       const pt2 = dash.getPointAtLength(Math.min(len - 1, drawn + 18));
       const ang = Math.atan2(pt2.y - pt.y, pt2.x - pt.x) * 180 / Math.PI;
-      plane.style.transform = `translate(${pt.x}px, ${pt.y}px) translate(-50%, -50%) rotate(${ang}deg)`;
+      const vy  = pt.y - window.scrollY;
+      plane.style.transform = `translate(${pt.x}px, ${vy}px) translate(-50%, -50%) rotate(${ang}deg)`;
     }
   }
 
@@ -93,7 +94,7 @@ export default function FlightPath() {
         <path id="fp-glow" className="glow" ref={glowRef} />
       </svg>
       <div className="path-vehicle" id="fp-plane" ref={planeRef}>
-        <svg width="34" height="34"><use href="#i-plane" /></svg>
+        <svg width="54" height="54"><use href="#i-plane" /></svg>
       </div>
     </>
   );

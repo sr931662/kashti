@@ -11,7 +11,7 @@ export default function Footer() {
           <div className="footer-grid">
             <div>
               <img className="f-logo" src="/assets/kashti-logo.png" alt="Kashti Adventures" />
-              <p className="f-blurb">Every great story begins with a kashti. Boats, roads and skies — we plan the whole passage, from Lucknow to anywhere.</p>
+              <p className="f-blurb">Every great story begins with a kashti. Boats, roads and skies — we plan the whole passage, from Delhi to anywhere.</p>
             </div>
             <div>
               <h5>Travel</h5>
@@ -31,7 +31,7 @@ export default function Footer() {
               <h5>Drop anchor</h5>
               <span className="f-link">boarding@kashtiadventures.com</span>
               <span className="f-link">+91 98XXX XXXXX</span>
-              <span className="f-link">Lucknow, Uttar Pradesh</span>
+              <span className="f-link">New Delhi, India</span>
             </div>
           </div>
           <div className="f-bottom">
