@@ -122,7 +122,7 @@ export default function Community() {
                   <span className="ct-label">Popular trips</span>
                   <div className="ct-pills">
                     {c.trips.map((t, j) => (
-                      <span className="ct-pill" key={j}>{t}</span>
+                      <Link className="ct-pill" to="/itineraries" key={j}>{t}</Link>
                     ))}
                   </div>
                 </div>

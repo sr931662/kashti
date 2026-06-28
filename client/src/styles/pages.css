@@ -186,11 +186,12 @@
   display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; margin-bottom: 56px;
 }
 .dest-card {
+  display: block; text-decoration: none; color: inherit;
   background: #fff; border-radius: 20px; overflow: hidden;
   box-shadow: var(--shadow-card); border: 1px solid var(--line-soft);
-  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease; cursor: pointer;
 }
-.dest-card:hover { transform: translateY(-5px); }
+.dest-card:hover { transform: translateY(-5px); box-shadow: 0 24px 48px -20px rgba(12,74,53,0.4); }
 .dc-photo { position: relative; aspect-ratio: 4 / 3; overflow: hidden; }
 .dc-photo img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
 .dest-card:hover .dc-photo img { transform: scale(1.06); }
@@ -591,3 +592,107 @@
 @media (max-width:1080px) { .itin-grid { grid-template-columns:repeat(2,1fr); } .itin-overview { flex-wrap:wrap; } .ov-item { min-width:50%; } }
 @media (max-width:860px) { .itin-inex { grid-template-columns:1fr; } .dt-item { grid-template-columns:52px 1fr; } }
 @media (max-width:560px) { .itin-grid { grid-template-columns:1fr; } .itin-overview { flex-direction:column; } .ov-item { border-right:none; border-bottom:1px solid var(--line-soft); } .dt-right { padding-bottom:32px; } }
+
+/* =========================================================
+   GALLERY LIGHTBOX
+   ========================================================= */
+.frame-cell { cursor: pointer; position: relative; }
+.frame-zoom {
+  position: absolute; top: 10px; right: 10px;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: rgba(255,255,255,0.85); backdrop-filter: blur(4px);
+  display: flex; align-items: center; justify-content: center;
+  opacity: 0; transition: opacity 0.2s;
+  pointer-events: none;
+}
+.frame-zoom svg { width: 15px; height: 15px; color: var(--green-ink); }
+.frame-cell:hover .frame-zoom { opacity: 1; }
+.lb-overlay {
+  position: fixed; inset: 0; z-index: 9000;
+  background: rgba(7,22,16,0.92); backdrop-filter: blur(8px);
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 24px; animation: lbIn 0.22s ease both;
+}
+@keyframes lbIn { from { opacity:0; } to { opacity:1; } }
+.lb-close {
+  position: absolute; top: 20px; right: 20px;
+  width: 44px; height: 44px; border-radius: 50%;
+  background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: background 0.15s;
+}
+.lb-close:hover { background: rgba(255,255,255,0.22); }
+.lb-close svg { width: 18px; height: 18px; }
+.lb-inner {
+  max-width: min(90vw, 860px); width: 100%;
+  border-radius: 18px; overflow: hidden;
+  box-shadow: 0 48px 100px rgba(0,0,0,0.6);
+  animation: lbScale 0.25s cubic-bezier(0.2,1,0.4,1) both;
+}
+@keyframes lbScale { from { transform: scale(0.92); } to { transform: scale(1); } }
+.lb-inner img { width: 100%; display: block; max-height: 78vh; object-fit: cover; }
+.lb-caption {
+  background: rgba(255,255,255,0.08); padding: 14px 20px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.lb-handle { color: rgba(255,255,255,0.9); font-weight: 700; font-size: 14px; display: flex; align-items: center; gap: 7px; }
+.lb-handle svg { width: 14px; height: 14px; color: var(--amber); }
+.lb-place { color: rgba(255,255,255,0.6); font-size: 13px; }
+.lb-hint { color: rgba(255,255,255,0.35); font-size: 12px; margin-top: 14px; }
+
+/* =========================================================
+   DESTINATION CARDS — clickable
+   ========================================================= */
+.dc-cta {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;
+  font-size: 13px; font-weight: 700; color: var(--green);
+}
+.dc-cta svg { width: 13px; height: 13px; transition: transform 0.15s; }
+.dest-card:hover .dc-cta svg { transform: translateX(4px); }
+
+/* =========================================================
+   GIVING BACK — CTA row
+   ========================================================= */
+.gb-cta-row { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 28px; }
+.btn-outline {
+  border: 2px solid var(--green); color: var(--green); background: transparent;
+  padding: 12px 24px; border-radius: 999px; font-weight: 700; font-size: 14.5px;
+  display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+  transition: background 0.18s, color 0.18s;
+}
+.btn-outline:hover { background: var(--green); color: #fff; }
+.btn-outline svg { width: 16px; height: 16px; }
+
+/* =========================================================
+   EDUCARE — teaser cards & who-tiles clickable
+   ========================================================= */
+.teaser-card {
+  text-decoration: none; color: inherit; cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.teaser-card:hover { transform: translateY(-5px); box-shadow: 0 20px 48px -20px rgba(12,74,53,0.3); }
+.tc-cta {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
+  font-size: 13px; font-weight: 700; color: var(--green);
+}
+.tc-cta svg { width: 13px; height: 13px; transition: transform 0.15s; }
+.teaser-card:hover .tc-cta svg { transform: translateX(4px); }
+.who-tile { text-decoration: none; color: inherit; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s; }
+.who-tile:hover { transform: translateY(-4px); box-shadow: 0 20px 48px -20px rgba(12,74,53,0.3); }
+.wt-cta {
+  display: inline-flex; align-items: center; gap: 6px; margin-top: 14px;
+  font-size: 13px; font-weight: 700; color: var(--green);
+}
+.wt-cta svg { width: 13px; height: 13px; transition: transform 0.15s; }
+.who-tile:hover .wt-cta svg { transform: translateX(4px); }
+
+/* =========================================================
+   COMMUNITY — trip pills clickable
+   ========================================================= */
+.ct-pill { text-decoration: none; cursor: pointer; transition: background 0.15s, color 0.15s; }
+.ct-pill:hover { background: var(--green); color: #fff; }
+
+/* =========================================================
+   MORE — insurance CTA clickable
+   ========================================================= */
+.ins-card-cta { text-decoration: none; cursor: pointer; }

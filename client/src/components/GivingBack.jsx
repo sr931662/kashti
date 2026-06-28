@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Icon } from './Icons';
 
 export default function GivingBack() {
@@ -29,6 +30,14 @@ export default function GivingBack() {
               <li><span className="dot"><Icon id="i-check" /></span> Carbon-balanced group departures</li>
             </ul>
             <div className="gb-tagline">leave only ripples. ~</div>
+            <div className="gb-cta-row">
+              <Link className="btn btn-green" to="/more#about">
+                Our full story <Icon id="i-arrow" />
+              </Link>
+              <Link className="btn btn-outline" to="/#book">
+                Travel with purpose <Icon id="i-leaf" />
+              </Link>
+            </div>
           </div>
         </div>
       </div>

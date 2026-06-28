@@ -139,7 +139,7 @@ function ExperienceDetail({ cat }) {
           </div>
           <div className="dest-cards reveal d1">
             {cat.destinations.map((d, i) => (
-              <div className="dest-card" key={i}>
+              <a className="dest-card" href="/#book" key={i}>
                 <div className="dc-photo">
                   <img src={d.img} alt={d.name} loading="lazy" />
                   <span className="dc-badge">{d.badge}</span>
@@ -148,8 +148,9 @@ function ExperienceDetail({ cat }) {
                   <h4>{d.name}</h4>
                   <span className="dc-state"><Icon id="i-pin" /> {d.state}</span>
                   <p>{d.note}</p>
+                  <span className="dc-cta">Book now <Icon id="i-arrow" /></span>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
 

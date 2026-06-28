@@ -31,7 +31,7 @@ export default function Inspire() {
             <div className="collection reveal">
               <div className="collection-head">
                 <div className="collection-title">
-                  <span className="pill"><Icon id="i-compass" /> Scheduled Trips</span>
+                  <span className="pill"><Icon id="i-compass" /> Trips</span>
                   <span className="sub">Fixed departures · join a curated crew</span>
                 </div>
                 <a className="viewall" href="/experiences">View all <Icon id="i-arrow" /></a>

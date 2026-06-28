@@ -109,10 +109,10 @@ export default function More() {
                 <span>{p}</span>
               </div>
             ))}
-            <div className="ins-card ins-card-cta">
+            <Link className="ins-card ins-card-cta" to="/#book">
               <Icon id="i-arrow" />
               <span>Add insurance at checkout — from ₹299 per trip</span>
-            </div>
+            </Link>
           </div>
         </div>
       </section>

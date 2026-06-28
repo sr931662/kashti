@@ -87,10 +87,11 @@ export default function Educare() {
 
           <div className="teaser-grid reveal d1">
             {TEASERS.map((t, i) => (
-              <div className="teaser-card" key={i}>
+              <a className="teaser-card" href="#enquire" key={i}>
                 <span className="tc-icon"><Icon id={t.icon} /></span>
                 <p className="tc-line">"{t.line}"</p>
-              </div>
+                <span className="tc-cta">Find out more <Icon id="i-arrow" /></span>
+              </a>
             ))}
           </div>
         </div>
@@ -136,11 +137,12 @@ export default function Educare() {
               { icon: 'i-case',  label: 'Corporates',   desc: 'L&D teams who want learning that actually sticks.' },
               { icon: 'i-heart', label: 'Families',     desc: 'Parents who believe travel is the best teacher.' },
             ].map((item, i) => (
-              <div className="who-tile" key={i}>
+              <a className="who-tile" href="#enquire" key={i}>
                 <span className="wt-icon"><Icon id={item.icon} /></span>
                 <h4>{item.label}</h4>
                 <p>{item.desc}</p>
-              </div>
+                <span className="wt-cta">Enquire <Icon id="i-arrow" /></span>
+              </a>
             ))}
           </div>
         </div>

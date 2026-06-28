@@ -18,8 +18,20 @@ const Community   = lazy(() => import('./pages/Community'));
 const More        = lazy(() => import('./pages/More'));
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => { window.scrollTo(0, 0); }, [pathname]);
+  const { pathname, hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const id = hash.slice(1);
+      const tryScroll = (attempts = 0) => {
+        const el = document.getElementById(id);
+        if (el) { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+        else if (attempts < 10) { setTimeout(() => tryScroll(attempts + 1), 80); }
+      };
+      setTimeout(tryScroll, 50);
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
   return null;
 }
 
