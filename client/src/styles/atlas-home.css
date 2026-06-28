@@ -356,6 +356,25 @@
 .pill-amber { background: var(--amber) !important; color: var(--green-ink) !important; }
 
 /* =========================================================
+   CUSTOMIZED TRIPS — section heading
+   ========================================================= */
+.custom-section-heading {
+  display: flex; align-items: center; gap: 14px;
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(26px, 3vw, 38px); color: var(--green-ink);
+  letter-spacing: -0.02em; line-height: 1.1; margin: 0;
+}
+.csh-icon {
+  width: 48px; height: 48px; border-radius: 14px;
+  background: var(--amber); color: var(--green-ink);
+  display: flex; align-items: center; justify-content: center; flex: none;
+}
+.csh-icon svg { width: 24px; height: 24px; }
+.custom-section-sub {
+  font-size: 16px; color: #6b7a6d; margin: 10px 0 0 62px; font-weight: 500; line-height: 1.5;
+}
+
+/* =========================================================
    CUSTOMIZED TRIPS BAND
    ========================================================= */
 .custom-band {

@@ -59,8 +59,11 @@ export default function Inspire() {
             <div className="collection reveal">
               <div className="collection-head">
                 <div className="collection-title">
-                  <span className="pill pill-amber"><Icon id="i-spark" /> Customized Trips</span>
-                  <span className="sub">Design your own journey from scratch</span>
+                  <h2 className="custom-section-heading">
+                    <span className="csh-icon"><Icon id="i-spark" /></span>
+                    Customized Trips
+                  </h2>
+                  <p className="custom-section-sub">Design your own journey from scratch — we handle every detail.</p>
                 </div>
               </div>
               <div className="custom-band">
