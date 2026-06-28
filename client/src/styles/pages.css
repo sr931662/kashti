@@ -456,6 +456,7 @@
   .nav-dropdown { left: 0; transform: none; }
 }
 @media (max-width: 560px) {
+  .wrap { width: calc(100% - 36px); }
   .exp-grid { grid-template-columns: 1fr; }
   .dest-cards { grid-template-columns: 1fr; }
   .who-grid { grid-template-columns: 1fr 1fr; }
