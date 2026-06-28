@@ -137,6 +137,7 @@
   position: relative; background: #fff; border-radius: 20px; overflow: hidden;
   box-shadow: var(--shadow-card); border: 1px solid var(--line-soft);
   display: flex; flex-direction: column; cursor: pointer;
+  text-decoration: none; color: inherit;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 .tcard:hover { transform: translateY(-6px); box-shadow: 0 34px 56px -30px rgba(15,74,53,0.5); }
@@ -358,39 +359,63 @@
    CUSTOMIZED TRIPS BAND
    ========================================================= */
 .custom-band {
-  position: relative; border-radius: 24px; overflow: hidden;
-  background: var(--green-ink); min-height: 340px;
+  position: relative; border-radius: 28px; overflow: hidden;
+  background: var(--green-ink); min-height: 520px;
+  display: flex; align-items: center;
 }
 .custom-band-bg { position: absolute; inset: 0; }
 .custom-band-bg img { width: 100%; height: 100%; object-fit: cover; }
 .custom-band-scrim {
   position: absolute; inset: 0;
-  background: linear-gradient(135deg, rgba(7,42,29,0.95) 0%, rgba(7,42,29,0.75) 55%, rgba(7,42,29,0.45) 100%);
+  background: linear-gradient(135deg, rgba(7,42,29,0.97) 0%, rgba(7,42,29,0.82) 50%, rgba(7,42,29,0.55) 100%);
 }
-.custom-band-content { position: relative; z-index: 2; padding: clamp(30px, 5vw, 56px); }
+.custom-band-content { position: relative; z-index: 2; padding: clamp(40px, 6vw, 72px); width: 100%; }
+.custom-band-intro {
+  margin-bottom: 44px;
+}
+.custom-band-intro h3 {
+  font-family: var(--display); font-weight: 800;
+  font-size: clamp(28px, 4vw, 48px); color: #fff; line-height: 1.1; margin-bottom: 12px;
+}
+.custom-band-intro h3 em { font-style: normal; color: var(--amber-soft); }
+.custom-band-intro p {
+  font-size: clamp(15px, 1.4vw, 18px); color: rgba(255,255,255,0.75); max-width: 560px; line-height: 1.6;
+}
 .custom-steps {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 40px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 48px;
 }
-.cs-item { display: flex; flex-direction: column; gap: 10px; }
+.cs-item { display: flex; flex-direction: column; gap: 12px; }
 .cs-num {
-  width: 30px; height: 30px; border-radius: 50%; border: 2px solid var(--amber);
-  color: var(--amber); font-family: var(--display); font-weight: 800; font-size: 14px;
+  width: 38px; height: 38px; border-radius: 50%; border: 2px solid var(--amber);
+  color: var(--amber); font-family: var(--display); font-weight: 800; font-size: 16px;
   display: flex; align-items: center; justify-content: center; flex: none;
 }
 .cs-icon { color: var(--amber-soft); }
-.cs-icon svg { width: 22px; height: 22px; }
-.cs-item h4 { color: #fff; font-family: var(--display); font-weight: 700; font-size: 17px; }
-.cs-item p { color: rgba(255,255,255,0.75); font-size: 14px; line-height: 1.55; }
+.cs-icon svg { width: 26px; height: 26px; }
+.cs-item h4 { color: #fff; font-family: var(--display); font-weight: 700; font-size: 19px; line-height: 1.2; }
+.cs-item p { color: rgba(255,255,255,0.72); font-size: 14.5px; line-height: 1.6; }
 .custom-cta-row {
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
-  border-top: 1px solid rgba(255,255,255,0.15); padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,0.15); padding-top: 36px;
 }
 .custom-tagline {
-  font-family: var(--hand); font-size: clamp(20px, 2.5vw, 28px);
+  font-family: var(--hand); font-size: clamp(22px, 2.8vw, 34px);
   color: var(--amber-soft); margin: 0;
+}
+.custom-cta-row .btn-amber {
+  padding: 18px 40px; font-size: 17px; font-weight: 800; white-space: nowrap;
+  box-shadow: 0 8px 32px rgba(214,167,77,0.45);
+}
+.custom-cta-row .btn-amber:hover {
+  transform: translateY(-3px); box-shadow: 0 16px 48px rgba(214,167,77,0.55);
 }
 
 @media (max-width: 860px) {
+  .custom-band { min-height: 420px; }
   .custom-steps { grid-template-columns: 1fr 1fr; }
-  .custom-cta-row { flex-direction: column; align-items: flex-start; gap: 18px; }
+  .custom-cta-row { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+@media (max-width: 560px) {
+  .custom-steps { grid-template-columns: 1fr; gap: 24px; }
+  .custom-cta-row .btn-amber { width: 100%; justify-content: center; }
 }

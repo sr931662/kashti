@@ -12,6 +12,7 @@ import './styles/pages.css';
 
 const Home        = lazy(() => import('./pages/Home'));
 const Experiences = lazy(() => import('./pages/Experiences'));
+const Itinerary   = lazy(() => import('./pages/Itinerary'));
 const Educare     = lazy(() => import('./pages/Educare'));
 const Community   = lazy(() => import('./pages/Community'));
 const More        = lazy(() => import('./pages/More'));
@@ -48,6 +49,8 @@ export default function App() {
             <Route path="/"                       element={<Home />} />
             <Route path="/experiences"            element={<Experiences />} />
             <Route path="/experiences/:category"  element={<Experiences />} />
+            <Route path="/itineraries"            element={<Itinerary />} />
+            <Route path="/itineraries/:id"        element={<Itinerary />} />
             <Route path="/educare"                element={<Educare />} />
             <Route path="/community"              element={<Community />} />
             <Route path="/more"                   element={<More />} />

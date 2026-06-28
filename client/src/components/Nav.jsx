@@ -16,6 +16,16 @@ const NAV_ITEMS = [
     ],
   },
   {
+    label: 'Itineraries', href: '/itineraries',
+    children: [
+      { label: 'All Itineraries',    href: '/itineraries',               icon: 'i-map',     sub: 'Browse all ready-made trips' },
+      { label: 'Adventure',          href: '/itineraries?type=Adventure', icon: 'i-mtn',     sub: 'High passes & wild terrain' },
+      { label: 'Beach & Islands',    href: '/itineraries?type=Beach',     icon: 'i-compass', sub: 'Reefs, backwaters & lagoons' },
+      { label: 'Cultural Heritage',  href: '/itineraries?type=Cultural',  icon: 'i-globe',   sub: 'Forts, temples & traditions' },
+      { label: 'Wellness & Nature',  href: '/itineraries?type=Wellness',  icon: 'i-lotus',   sub: 'Spas, tea estates & silence' },
+    ],
+  },
+  {
     label: 'Educare', href: '/educare',
     children: [
       { label: 'The Programme',   href: '/educare#programme', icon: 'i-passport', sub: 'Something extraordinary awaits' },

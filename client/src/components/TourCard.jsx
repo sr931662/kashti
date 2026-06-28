@@ -1,9 +1,14 @@
+import { Link } from 'react-router-dom';
 import { Icon } from './Icons';
 import { inr } from '../data/tours';
 
 export default function TourCard({ tour }) {
+  const href = tour.itineraryId
+    ? `/itineraries/${tour.itineraryId}`
+    : '/itineraries';
+
   return (
-    <article className="tcard">
+    <Link to={href} className="tcard" aria-label={`View ${tour.name} itinerary`}>
       <div className="tcard-photo">
         <img src={tour.img} alt={tour.name} loading="lazy" decoding="async" />
         <span className="tcard-tag">{tour.tag}</span>
@@ -27,6 +32,6 @@ export default function TourCard({ tour }) {
           <span className="tcard-go"><Icon id="i-arrow" /></span>
         </div>
       </div>
-    </article>
+    </Link>
   );
 }

@@ -27,12 +27,12 @@ export default function Inspire() {
               </div>
             </div>
 
-            {/* ── Normal Trips ── */}
+            {/* ── Scheduled Trips ── */}
             <div className="collection reveal">
               <div className="collection-head">
                 <div className="collection-title">
-                  <span className="pill"><Icon id="i-compass" /> Normal Trips</span>
-                  <span className="sub">Fixed departures · join a scheduled crew</span>
+                  <span className="pill"><Icon id="i-compass" /> Scheduled Trips</span>
+                  <span className="sub">Fixed departures · join a curated crew</span>
                 </div>
                 <a className="viewall" href="/experiences">View all <Icon id="i-arrow" /></a>
               </div>
@@ -69,6 +69,10 @@ export default function Inspire() {
                 </div>
                 <div className="custom-band-scrim" aria-hidden="true" />
                 <div className="custom-band-content">
+                  <div className="custom-band-intro">
+                    <h3>Your trip. <em>Your rules.</em></h3>
+                    <p>Tell us where you want to go and we'll build a fully personalised itinerary — hotels, transport, guides and experiences — tailored exactly to you.</p>
+                  </div>
                   <div className="custom-steps">
                     {CUSTOM_STEPS.map((s, i) => (
                       <div className="cs-item" key={i}>
